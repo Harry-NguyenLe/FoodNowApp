@@ -54,7 +54,11 @@ public class OrderFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                storeLactionActivity.backToPreviousScreen();
+                 FragmentManager fragmentManager = getFragmentManager();
+               if (fragmentManager.getBackStackEntryCount() != 0)
+               {
+                   fragmentManager.popBackStack();
+               }
 
             }
         });

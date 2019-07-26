@@ -82,15 +82,10 @@ public class StoreLactionActivity extends AppCompatActivity {
     public void getStoreForFragment(Store store) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.content, OrderFragment.newInstance(store));
-        fragmentTransaction.commit();
-    }
-
-    public void backToPreviousScreen() {
-        OrderFragment orderFragment = new OrderFragment();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content, orderFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
+
 
 }
